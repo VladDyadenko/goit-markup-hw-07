@@ -1,0 +1,130 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    letter-spacing: 0.03em;
+    font-family: Roboto, sans-serif;
+    background-color: $praymary-background-color;
+    color: $praymare-text-color;
+}
+.header {
+    border-bottom: 1px solid $header-border-color;
+}
+
+.container {
+    width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    &--flex {
+            display: flex;
+        }
+}
+
+.site-nav {
+    display: flex;
+}
+// навігація
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-list__item {
+    margin-right: 50px;
+    &--position {
+            margin-right: 0;
+        }
+}
+
+
+.nav-list__link {
+    padding: 32px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: $title-text-color;
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &--current {
+            position: relative;
+            color: $logo-akcent-color;
+        }
+    &--current::after {
+        display: block;
+        position: absolute;
+        content: "";
+        height: 4px;
+        width: 100%;
+        background-color: $logo-akcent-color;
+        border-radius: 2px;
+        bottom: 0;
+    }
+
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+    color: $logo-akcent-color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    margin-left: auto;
+    list-style: none;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &__text {
+            margin: 0;
+        }
+}
+
+.nav-contact__item {
+    margin-right: 30px;
+}
+
+.nav-contact__link {
+    display: flex;
+    align-items: center;
+    padding: 32px 0;
+    max-width: 161px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: $praymare-text-color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.nav-contact__icon {
+    margin-right: 10px;
+    fill: $praymare-text-color;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    .link:hover &,
+    .link:focus &,
+    .link:active & {
+        fill: $logo-akcent-color;
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+}
+
+
+

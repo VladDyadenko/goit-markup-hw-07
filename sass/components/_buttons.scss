@@ -1,0 +1,49 @@
+
+.title__button-site {
+    @extend %button-site;
+    padding: 10px 32px;
+    min-width: 216px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background-color: $button-active-color;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+}
+
+.button-site-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $praymary-background-color;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+.form__button-site {
+    @extend %button-site;
+    padding: 10px 52px;
+    min-width: 200px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form__button-site:hover {
+    background-color: $button-active-color;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-site-close__icon {
+    fill: carrentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-site-close:hover .button-site-close__icon {
+    fill: $logo-akcent-color;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
