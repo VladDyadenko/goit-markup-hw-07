@@ -9,17 +9,15 @@
     padding-left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     list-style: none;
-    align-items: center;
-    justify-content: center;
+    @extend %flexbox;
 }
 
 .list-social__item {
     width: 100%;
     height: 100%;
     margin-right: 10px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     &--position {
         margin-right: 0;
     }
@@ -31,17 +29,16 @@
     width: 100%;
     height: 100%;
     background-color: $praymary-background-color;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (background-color);
+
     &:hover,
     &:hover {
         background-color: $logo-akcent-color;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &--grey {
         background-color: rgba(255, 255, 255, 0.1);
-        ;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        @include transition (background-color);
     }
 
 
@@ -54,17 +51,16 @@
 
 .list-social__icon {
     fill: $icon-color;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (fill);
 
     .list-social__link:hover &,
     .list-social__link:focus & {
         fill: $praymary-background-color;
-        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &--white {
         fill: $praymary-background-color;
-        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     }
 }
 

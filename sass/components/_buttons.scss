@@ -3,11 +3,10 @@
     @extend %button-site;
     padding: 10px 32px;
     min-width: 216px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    @include transition (background-color);
+    
     &:hover {
         background-color: $button-active-color;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 }
 
@@ -29,21 +28,23 @@
     @extend %button-site;
     padding: 10px 52px;
     min-width: 200px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (background-color);
+    
+    &:hover {
+        background-color: $button-active-color;
+       
+    }
 }
 
-.form__button-site:hover {
-    background-color: $button-active-color;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .button-site-close__icon {
     fill: carrentColor;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (fill);
+
+    .button-site-close:hover & {
+        fill: $logo-akcent-color;
+        }
 }
 
-.button-site-close:hover .button-site-close__icon {
-    fill: $logo-akcent-color;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 

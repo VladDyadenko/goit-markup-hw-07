@@ -2,9 +2,11 @@
 .section {
     padding-bottom: 94px;
     padding-top: 94px;
+
     &--expansion {
         padding-top: 82px;
     }
+
     &--bright {
         background-color: $button-background-color;
     }
@@ -31,9 +33,7 @@
     margin-right: auto;
 
     &--flex {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @extend %flexbox;
     }
 
     &--reduction {
@@ -72,23 +72,24 @@
     background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
     z-index: 10;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (opacity);
 
     &--is-hidden {
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
-        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-        }
+    }
 
 }
 // Переваги
+
 .list {
     padding-left: 0;
     display: flex;
     list-style: none;
     margin: 0;
+    
     &__item--position {
         margin-right: 30px;
         }

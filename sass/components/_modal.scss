@@ -12,7 +12,8 @@
     background-color: $praymary-background-color;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (transform);
+
     .backdrop--is-hidden & {
         transform: scale(0.3);
     }
@@ -24,7 +25,7 @@
     line-height: 1.15;
     text-align: center;
     letter-spacing: 0.03em;
-    color: var(--title-text-color);
+    color: $title-text-color;
     margin: 0 0 12px 0;
 }
 
@@ -55,10 +56,16 @@
     padding: 11px 12px;
     padding-left: 30px;
     cursor: pointer;
-
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (border);
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+        outline: 0;
+        border: 1px solid $logo-akcent-color;
+    }
 
 }
 
@@ -71,23 +78,17 @@
 
 .form__ikon {
     fill: $title-text-color;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (fill);
+
+    .form__input:focus~.form__svg &,
+    .form__input:hover~.form__svg & {
+        outline: 0;
+        fill: $logo-akcent-color;
+    }
 }
 
-.form__input:focus,
-.form__input:focus-visible,
-.form__input:hover {
-    outline: 0;
-    border: 1px solid $logo-akcent-color;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form__input:focus~.form__svg .form__ikon,
-.form__input:hover~.form__svg .form__ikon {
-    outline: 0;
-    fill: $logo-akcent-color;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 .form__textarea::placeholder {
     font-weight: 400;
@@ -106,36 +107,33 @@
     border-radius: 4px;
     resize: none;
     margin-bottom: 20px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition (border);
 
+    &:focus,
+    &:focus-visible,
+    &:hover {
+        outline: 0;
+        border: 1px solid $logo-akcent-color;
+    }
 }
 
-.form__textarea:focus,
-.form__textarea:focus-visible,
-.form__textarea:hover {
-    outline: 0;
-    border: 1px solid $logo-akcent-color;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .checkbox {
     position: relative;
-    align-items: center;
     width: 425px;
-    display: flex;
     margin-left: auto;
     margin-right: auto;
+    @extend %flexbox;
 }
 
 .checkbox__label {
-    display: flex;
-    align-items: center;
     margin-bottom: 30px;
     min-width: 425px;
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
     margin-left: 9px;
+    @extend %flexbox;
 }
 
 .checkbox__input {
@@ -157,15 +155,14 @@
     border: 3px solid $title-text-color;
     background-color: $praymary-background-color;
     fill: $praymary-background-color;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+    @include transition (background-color);
 
-.checkbox__input:checked~.checkbox__svg {
-    fill: $praymary-background-color;
-    background-color: $logo-akcent-color;
-    border-color: $logo-akcent-color;
-    background-size: contain;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    .checkbox__input:checked~& {
+        fill: $praymary-background-color;
+        background-color: $logo-akcent-color;
+        border-color: $logo-akcent-color;
+        background-size: contain;
+    }
 }
 
 .checkbox-link {
